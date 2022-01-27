@@ -1,0 +1,34 @@
+FROM tensorflow/tensorflow:1.15.2-gpu-py3
+
+LABEL Name=tensorflow-objectdetection-training-gpu Version=0.0.1
+
+WORKDIR /app
+COPY requirements.txt /app
+
+RUN python3 -m pip install -r requirements.txt
+RUN apt-get update && apt-get -q -y install git-core wget curl
+RUN cd /usr/local/lib/python3.6/dist-packages/tensorflow/ && mkdir models && cd models && git init && git remote add models https://github.com/tensorflow/models.git && git fetch models && git checkout models/master
+RUN git clone https://github.com/cocodataset/cocoapi.git && cd cocoapi/PythonAPI && make && cp -r pycocotools /usr/local/lib/python3.6/dist-packages/tensorflow/models/research/
+RUN cd /usr/local/lib/python3.6/dist-packages/tensorflow/models/research && wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip && unzip protobuf.zip && ./bin/protoc object_detection/protos/*.proto --python_out=.
+
+ENV PYTHONPATH "${PYTHONPATH}:/usr/local/lib/python3.6/dist-packages/tensorflow/models/research:/usr/local/lib/python3.6/dist-packages/tensorflow/models/research/slim"
+ENV TFRESEARCH "/usr/local/lib/python3.6/dist-packages/tensorflow/models/research"
+
+# Environment variables for flask app
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV FLASK_APP "app.py"
+ENV FLASK_ENV "development"
+ENV FLASK_DEBUG False
+
+# Copying the content in the app directory. Ignoring the content in .dockerignore
+COPY . /app
+
+# Changing Working directory
+WORKDIR /app 
+
+# Exposing ports
+EXPOSE 5000
+
+# Entry level command to execute
+CMD flask run --host=0.0.0.0
+

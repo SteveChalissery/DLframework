@@ -1,0 +1,20 @@
+{
+	"loglevel": "DEBUG",
+	"badrequest": 400,  
+	"statusok": 200,
+	"CORS_HEADERS": "Content-Type",
+	"host": "0.0.0.0",
+	"port": 5000,
+	"logfileName": "logfile.log",
+	"logURL": "https://loggingserviceiop.azurewebsites.net/uploadToBlob",
+    "logHeader": "{'Content-Type':'application/json'}",
+	"Zoo" : "Model Zoo",
+	"project_root" : "/",
+	"tfrecord_dir" : "annotations/tfrecord",
+	"output_model_dir" : "models",
+	"server_host" : "192.168.1.108",
+	"preprocess" : "random_vertical_flip,random_pixel_value_scale,random_rgb_to_gray,random_rotation90,random_distort_color,random_adjust_brightness,random_crop_image,resize_image,random_distort_color,random_black_patches",
+	"iothubname" : "DLFramewrokHub",
+	"iotsastoken" : "SharedAccessSignature sr=DLFrameworkHub.azure-devices.net&sig=%2BRCspERxVMeKtQi8rOBYH6%2Fs78%2FJ5pjE2HlbXL1XzHE%3D&se=1617797679&skn=iothubowner",
+	"edgedevices" : "azuremachine"
+}

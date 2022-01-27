@@ -1,0 +1,36 @@
+2021/03/12 08:54:34 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2021/03/12 08:54:34 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2021-03-12T08:54:35.864035] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--base_model_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\Model Zoo\\ssd_mobilenet_v1_coco_2018_01_28', '--tfrecords_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14\\annotations/tfrecord', '--force_regenerate_tfrecords', 'False', '--num_steps', '2000', '--log_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/logs/20210312_1424', '--classname_in_filename', 'False', '--output_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/models/ssd_mobilenet_v1_coco_2018_01_28', '--learning_rate', '0.15', '--batch_size', '2', '--data_augment_options', 'None'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 413
+[2021-03-12T08:54:37.460126] Entering Run History Context Manager.
+[2021-03-12T08:54:38.222751] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/workspaceblobstore/azureml/oidlframework_1615539250_3c7b3c5a
+[2021-03-12T08:54:38.222915] Preparing to call script [train.py] with arguments:['--base_model_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\Model Zoo\\ssd_mobilenet_v1_coco_2018_01_28', '--tfrecords_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14\\annotations/tfrecord', '--force_regenerate_tfrecords', 'False', '--num_steps', '2000', '--log_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/logs/20210312_1424', '--classname_in_filename', 'False', '--output_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/models/ssd_mobilenet_v1_coco_2018_01_28', '--learning_rate', '0.15', '--batch_size', '2', '--data_augment_options', 'None']
+[2021-03-12T08:54:38.223036] After variable expansion, calling script [train.py] with arguments:['--base_model_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\Model Zoo\\ssd_mobilenet_v1_coco_2018_01_28', '--tfrecords_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14\\annotations/tfrecord', '--force_regenerate_tfrecords', 'False', '--num_steps', '2000', '--log_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/logs/20210312_1424', '--classname_in_filename', 'False', '--output_dir', '/mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\\AppData/14/models/ssd_mobilenet_v1_coco_2018_01_28', '--learning_rate', '0.15', '--batch_size', '2', '--data_augment_options', 'None']
+
+2021/03/12 08:54:39 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+logconf /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/workspaceblobstore/azureml/oidlframework_1615539250_3c7b3c5a/logging.yml
+logconf loaded
+2021-03-12 08:54:42,522 - train - INFO - original pipeline.config /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore/Model Zoo/ssd_mobilenet_v1_coco_2018_01_28/pipeline.config
+2021-03-12 08:54:42,989 - train - INFO - found a ssd base model
+2021-03-12 08:54:43,457 - train - INFO - num_of_classes from 90 to 2
+2021-03-12 08:54:43,457 - train - INFO - fine_tune_checkpoint: /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore///Model Zoo/ssd_mobilenet_v1_coco_2018_01_28/model.ckpt
+2021-03-12 08:54:43,457 - tensorflow - WARNING - 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+2021-03-12 08:54:43,458 - tensorflow - INFO - Maybe overwriting batch_size: 2
+2021-03-12 08:54:43,458 - tensorflow - INFO - Maybe overwriting train_steps: 2000
+2021-03-12 08:54:43,458 - tensorflow - INFO - Maybe overwriting label_map_path: /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore/AppData/14/annotations/tfrecord/label_map.pbtxt
+2021-03-12 08:54:43,458 - tensorflow - INFO - Maybe overwriting train_input_path: /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore///AppData/14/annotations/tfrecord/default.tfrecord
+2021-03-12 08:54:43,458 - tensorflow - INFO - Maybe overwriting eval_input_path: /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore///AppData/14/annotations/tfrecord/default.tfrecord
+2021-03-12 08:54:43,470 - tensorflow - INFO - Writing pipeline config file to /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore/AppData/14/models/ssd_mobilenet_v1_coco_2018_01_28/pipeline.config
+2021-03-12 08:54:43,552 - train - INFO - updated pipeline.config /mnt/batch/tasks/shared/LS_root/jobs/aml-iop-oi-prod-001/azureml/oidlframework_1615539250_3c7b3c5a/mounts/amldatastore//\AppData/14/models/ssd_mobilenet_v1_coco_2018_01_28
